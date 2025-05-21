@@ -76,7 +76,7 @@ class QueryStore2:
             # if adain_queries == True and t <= 761 : 
             #     self.query_store[t] = adain(self.query_store[t].to(query.device), query)
             residual = query - query.mean(dim=1,keepdim=True)
-            if t >= 801:
+            if t >= 901:
                 self.query_store[t] = residual + self.query_store[t].to(query.device)
             new_query = strength * self.query_store[t].to(query.device) + (1-strength) * query 
         else:
